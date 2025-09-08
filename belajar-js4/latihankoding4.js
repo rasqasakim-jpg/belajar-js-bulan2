@@ -1,335 +1,335 @@
-// // // // ======================================
-// // // // soal day 4
-// // // // ======================================
+// ======================================
+// soal day 4
+// ======================================
 
-// // // // 1.rekap absensi santri harian
-// // // // //======================
-// // // //  function hitungAbsensi(absensiArr) {
-// // // //   // Validasi minimal 1 data, pakai do while
-// // // //   let valid = false;
-// // // //   do {
-// // // //     if (absensiArr.length > 0) {
-// // // //       valid = true;
-// // // //     } else {
-// // // //       console.log("Data absensi minimal 1!");
-// // // //       return "Data absensi tidak valid.";
-// // // //     }
-// // // //   } while (!valid);
+// 1.rekap absensi santri harian
+// //======================
+//  function hitungAbsensi(absensiArr) {
+//   // Validasi minimal 1 data, pakai do while
+//   let valid = false;
+//   do {
+//     if (absensiArr.length > 0) {
+//       valid = true;
+//     } else {
+//       console.log("Data absensi minimal 1!");
+//       return "Data absensi tidak valid.";
+//     }
+//   } while (!valid);
 
-// // // //   // Variabel counter
-// // // //   let hadir = 0;
-// // // //   let alpa = 0;
-// // // //   let izin = 0;
+//   // Variabel counter
+//   let hadir = 0;
+//   let alpa = 0;
+//   let izin = 0;
 
-// // // //   // Iterasi pakai for
-// // // //   for (let i = 0; i < absensiArr.length; i++) {
-// // // //     let status = absensiArr[i];
+//   // Iterasi pakai for
+//   for (let i = 0; i < absensiArr.length; i++) {
+//     let status = absensiArr[i];
 
-// // // //     // Deteksi jenis absensi pakai if
-// // // //     if (status === "Hadir") {
-// // // //       hadir++;
-// // // //     } else if (status === "Alpa") {
-// // // //       alpa++;
-// // // //     } else if (status === "Izin") {
-// // // //       izin++;
-// // // //     }
-// // // //   }
+//     // Deteksi jenis absensi pakai if
+//     if (status === "Hadir") {
+//       hadir++;
+//     } else if (status === "Alpa") {
+//       alpa++;
+//     } else if (status === "Izin") {
+//       izin++;
+//     }
+//   }
 
-// // // //   // Simpan hasil ke object untuk memudahkan forEach
-// // // //   let rekap = {
-// // // //     Hadir: hadir,
-// // // //     Alpa: alpa,
-// // // //     Izin: izin
-// // // //   };
+//   // Simpan hasil ke object untuk memudahkan forEach
+//   let rekap = {
+//     Hadir: hadir,
+//     Alpa: alpa,
+//     Izin: izin
+//   };
 
-// // // //   // Print rekap dengan switch di dalam forEach
-// // // //   let hasil = [];
-// // // //   Object.keys(rekap).forEach((key) => {
-// // // //     switch (key) {
-// // // //       case "Hadir":
-// // // //         hasil.push(Hadir: ${rekap[key]} kali);
-// // // //         break;
-// // // //       case "Alpa":
-// // // //         hasil.push(Alpa: ${rekap[key]} kali);
-// // // //         break;
-// // // //       case "Izin":
-// // // //         hasil.push(Izin: ${rekap[key]} kali);
-// // // //         break;
-// // // //     }
-// // // //   });
+//   // Print rekap dengan switch di dalam forEach
+//   let hasil = [];
+//   Object.keys(rekap).forEach((key) => {
+//     switch (key) {
+//       case "Hadir":
+//         hasil.push(Hadir: ${rekap[key]} kali);
+//         break;
+//       case "Alpa":
+//         hasil.push(Alpa: ${rekap[key]} kali);
+//         break;
+//       case "Izin":
+//         hasil.push(Izin: ${rekap[key]} kali);
+//         break;
+//     }
+//   });
 
-// // // //   // Hitung persentase hadir
-// // // //   let persenHadir = (hadir / absensiArr.length) * 100;
+//   // Hitung persentase hadir
+//   let persenHadir = (hadir / absensiArr.length) * 100;
 
-// // // //   // Return string deskriptif
-// // // //   return hasil.join(", ") + . %Hadir: ${persenHadir.toFixed(0)}%.;
-// // // // }
+//   // Return string deskriptif
+//   return hasil.join(", ") + . %Hadir: ${persenHadir.toFixed(0)}%.;
+// }
 
-// // // // // Contoh penggunaan
-// // // // let dataAbsensi = ["Hadir", "Alpa", "Izin", "Hadir", "Hadir"];
-// // // // console.log(hitungAbsensi(dataAbsensi));
+// // Contoh penggunaan
+// let dataAbsensi = ["Hadir", "Alpa", "Izin", "Hadir", "Hadir"];
+// console.log(hitungAbsensi(dataAbsensi));
 
-// // // // 2.laporan santri lulus it fundamental
-// // // //======================
+// 2.laporan santri lulus it fundamental
+//======================
 
-// // // // function laporanKelulusan(namaArr, nilaiArr) {
-// // // //   // Validasi: jumlah data harus sama & minimal 1
-// // // //   let valid = false;
-// // // //   do {
-// // // //     if (namaArr.length > 0 && namaArr.length === nilaiArr.length) {
-// // // //       valid = true;
-// // // //     } else {
-// // // //       console.log("Data tidak valid! Panjang array tidak sama atau kosong.");
-// // // //       return "Data tidak valid.";
-// // // //     }
-// // // //   } while (!valid);
+// function laporanKelulusan(namaArr, nilaiArr) {
+//   // Validasi: jumlah data harus sama & minimal 1
+//   let valid = false;
+//   do {
+//     if (namaArr.length > 0 && namaArr.length === nilaiArr.length) {
+//       valid = true;
+//     } else {
+//       console.log("Data tidak valid! Panjang array tidak sama atau kosong.");
+//       return "Data tidak valid.";
+//     }
+//   } while (!valid);
 
-// // // //   // Array untuk simpan hasil rekap
-// // // //   let rekap = [];
+//   // Array untuk simpan hasil rekap
+//   let rekap = [];
 
-// // // //   // Looping dengan for
-// // // //   for (let i = 0; i < namaArr.length; i++) {
-// // // //     let nama = namaArr[i];
-// // // //     let nilai = nilaiArr[i];
-// // // //     let status = "";
+//   // Looping dengan for
+//   for (let i = 0; i < namaArr.length; i++) {
+//     let nama = namaArr[i];
+//     let nilai = nilaiArr[i];
+//     let status = "";
 
-// // // //     // Penilaian dengan if
-// // // //     if (nilai >= 60) {
-// // // //       status = "LULUS";
-// // // //     } else {
-// // // //       status = "TIDAK LULUS";
-// // // //     }
+//     // Penilaian dengan if
+//     if (nilai >= 60) {
+//       status = "LULUS";
+//     } else {
+//       status = "TIDAK LULUS";
+//     }
 
-// // // //     // Gunakan switch untuk status (meskipun sederhana)
-// // // //     switch (status) {
-// // // //       case "LULUS":
-// // // //         rekap.push({ nama: nama, nilai: nilai, status: status });
-// // // //         break;
-// // // //       case "TIDAK LULUS":
-// // // //         rekap.push({ nama: nama, nilai: nilai, status: status });
-// // // //         break;
-// // // //     }
-// // // //   }
+//     // Gunakan switch untuk status (meskipun sederhana)
+//     switch (status) {
+//       case "LULUS":
+//         rekap.push({ nama: nama, nilai: nilai, status: status });
+//         break;
+//       case "TIDAK LULUS":
+//         rekap.push({ nama: nama, nilai: nilai, status: status });
+//         break;
+//     }
+//   }
 
-// // // //   // Print dengan forEach + operator ternary
-// // // //   let output = [];
-// // // //   rekap.forEach((item) => {
-// // // //     let teks = ${item.nama}: ${item.status} (nilai ${item.nilai});
-// // // //     output.push(teks);
-// // // //   });
+//   // Print dengan forEach + operator ternary
+//   let output = [];
+//   rekap.forEach((item) => {
+//     let teks = ${item.nama}: ${item.status} (nilai ${item.nilai});
+//     output.push(teks);
+//   });
 
-// // // //   return output.join("\n");
-// // // // }
+//   return output.join("\n");
+// }
 
-// // // // // Contoh penggunaan
-// // // // let nama = ["Ali", "Budi", "Cici"];
-// // // // let nilai = [78, 55, 95];
-// // // // console.log(laporanKelulusan(nama, nilai));
+// // Contoh penggunaan
+// let nama = ["Ali", "Budi", "Cici"];
+// let nilai = [78, 55, 95];
+// console.log(laporanKelulusan(nama, nilai));
 
-// // // // 3.analisa hafalan quran mingguan
-// // // // //======================
+// 3.analisa hafalan quran mingguan
+// //======================
 
-// // // // function analisaHafalan(hafalanArr) {
-// // // //   // Validasi input minimal 1 data pakai while
-// // // //   let i = 0;
-// // // //   while (hafalanArr.length === 0) {
-// // // //     console.log("Data hafalan tidak boleh kosong!");
-// // // //     return "Data tidak valid.";
-// // // //   }
+// function analisaHafalan(hafalanArr) {
+//   // Validasi input minimal 1 data pakai while
+//   let i = 0;
+//   while (hafalanArr.length === 0) {
+//     console.log("Data hafalan tidak boleh kosong!");
+//     return "Data tidak valid.";
+//   }
 
-// // // //   // Variabel untuk simpan total hafalan
-// // // //   let total = 0;
-// // // //   let rekap = [];
+//   // Variabel untuk simpan total hafalan
+//   let total = 0;
+//   let rekap = [];
 
-// // // //   // Loop for untuk rekap per minggu
-// // // //   for (let minggu = 0; minggu < hafalanArr.length; minggu++) {
-// // // //     let jumlah = hafalanArr[minggu];
-// // // //     total += jumlah;
-// // // //     let status = "";
+//   // Loop for untuk rekap per minggu
+//   for (let minggu = 0; minggu < hafalanArr.length; minggu++) {
+//     let jumlah = hafalanArr[minggu];
+//     total += jumlah;
+//     let status = "";
 
-// // // //     // Switch status berdasarkan jumlah
-// // // //     switch (true) {
-// // // //       case jumlah >= 12:
-// // // //         status = "Baik";
-// // // //         break;
-// // // //       case jumlah >= 10:
-// // // //         status = "Cukup";
-// // // //         break;
-// // // //       default:
-// // // //         status = "Perlu Usaha";
-// // // //     }
+//     // Switch status berdasarkan jumlah
+//     switch (true) {
+//       case jumlah >= 12:
+//         status = "Baik";
+//         break;
+//       case jumlah >= 10:
+//         status = "Cukup";
+//         break;
+//       default:
+//         status = "Perlu Usaha";
+//     }
 
-// // // //     rekap.push(Minggu ke-${minggu + 1}: ${jumlah} ayat, status ${status}.);
-// // // //   }
+//     rekap.push(Minggu ke-${minggu + 1}: ${jumlah} ayat, status ${status}.);
+//   }
 
-// // // //   // Hitung rata-rata
-// // // //   let rata = total / hafalanArr.length;
+//   // Hitung rata-rata
+//   let rata = total / hafalanArr.length;
 
-// // // //   // Print dengan forEach
-// // // //   let output = [];
-// // // //   rekap.forEach((baris) => {
-// // // //     output.push(baris);
-// // // //   });
+//   // Print dengan forEach
+//   let output = [];
+//   rekap.forEach((baris) => {
+//     output.push(baris);
+//   });
 
-// // // //   // Tambahkan info rata-rata
-// // // //   output.push(Rata-rata: ${rata.toFixed(1)} ayat.);
+//   // Tambahkan info rata-rata
+//   output.push(Rata-rata: ${rata.toFixed(1)} ayat.);
 
-// // // //   // Return string gabungan
-// // // //   return output.join(" ");
-// // // // }
+//   // Return string gabungan
+//   return output.join(" ");
+// }
 
-// // // // // Contoh penggunaan
-// // // // let data = [10, 8, 14, 15, 12];
-// // // // console.log(analisaHafalan(data));
+// // Contoh penggunaan
+// let data = [10, 8, 14, 15, 12];
+// console.log(analisaHafalan(data));
 
-// // // // 4.rekap usia dan generasi santri
-// // // //======================
+// 4.rekap usia dan generasi santri
+//======================
 
-// // // // function rekapUsia(usiaArr) {
-// // // //   // Validasi: tidak boleh ada usia negatif (pakai do while)
-// // // //   let valid = false;
-// // // //   do {
-// // // //     let adaNegatif = usiaArr.some((u) => u < 0);
-// // // //     if (usiaArr.length === 0 || adaNegatif) {
-// // // //       console.log("Data tidak valid! Usia kosong atau ada yang negatif.");
-// // // //       return "Data tidak valid.";
-// // // //     } else {
-// // // //       valid = true;
-// // // //     }
-// // // //   } while (!valid);
+// function rekapUsia(usiaArr) {
+//   // Validasi: tidak boleh ada usia negatif (pakai do while)
+//   let valid = false;
+//   do {
+//     let adaNegatif = usiaArr.some((u) => u < 0);
+//     if (usiaArr.length === 0 || adaNegatif) {
+//       console.log("Data tidak valid! Usia kosong atau ada yang negatif.");
+//       return "Data tidak valid.";
+//     } else {
+//       valid = true;
+//     }
+//   } while (!valid);
 
-// // // //   // Array untuk simpan hasil rekap
-// // // //   let rekap = [];
+//   // Array untuk simpan hasil rekap
+//   let rekap = [];
 
-// // // //   // Loop for
-// // // //   for (let i = 0; i < usiaArr.length; i++) {
-// // // //     let usia = usiaArr[i];
-// // // //     let kategori = "";
+//   // Loop for
+//   for (let i = 0; i < usiaArr.length; i++) {
+//     let usia = usiaArr[i];
+//     let kategori = "";
 
-// // // //     // Tentukan kategori dengan switch
-// // // //     switch (true) {
-// // // //       case usia < 13:
-// // // //         kategori = "Anak-anak";
-// // // //         break;
-// // // //       case usia < 20:
-// // // //         kategori = "Remaja";
-// // // //         break;
-// // // //       default:
-// // // //         kategori = "Dewasa";
-// // // //     }
+//     // Tentukan kategori dengan switch
+//     switch (true) {
+//       case usia < 13:
+//         kategori = "Anak-anak";
+//         break;
+//       case usia < 20:
+//         kategori = "Remaja";
+//         break;
+//       default:
+//         kategori = "Dewasa";
+//     }
 
-// // // //     // Simpan hasil
-// // // //     rekap.push(Santri ${i + 1}: ${kategori} (${usia} th));
-// // // //   }
+//     // Simpan hasil
+//     rekap.push(Santri ${i + 1}: ${kategori} (${usia} th));
+//   }
 
-// // // //   // Gabungkan dengan forEach
-// // // //   let output = [];
-// // // //   rekap.forEach((baris) => output.push(baris));
+//   // Gabungkan dengan forEach
+//   let output = [];
+//   rekap.forEach((baris) => output.push(baris));
 
-// // // //   // Return string hasil
-// // // //   return output.join(" ");
-// // // // }
+//   // Return string hasil
+//   return output.join(" ");
+// }
 
-// // // // // Contoh penggunaan
-// // // // let data = [11, 16, 22];
-// // // // console.log(rekapUsia(data));
+// // Contoh penggunaan
+// let data = [11, 16, 22];
+// console.log(rekapUsia(data));
 
-// // // // 5.daftar santri dan salam digital class
-// // // //======================
+// 5.daftar santri dan salam digital class
+//======================
 
-// // // function daftarSalam(namaArr) {
-// // //   // === Validasi tidak boleh ada duplikat nama (pakai while) ===
-// // //   let valid = false;
-// // //   while (!valid) {
-// // //     let adaDuplikat = new Set(namaArr).size !== namaArr.length; 
-// // //     // new Set() membuat kumpulan data unik, kalau ukuran beda berarti ada duplikat
-// // //     if (adaDuplikat || namaArr.length === 0) {
-// // //       console.log("Data tidak valid! Ada duplikat atau kosong.");
-// // //       return "Data tidak valid.";
-// // //     } else {
-// // //       valid = true; // kalau tidak ada duplikat, data valid
-// // //     }
-// // //   }
+function daftarSalam(namaArr) {
+  // === Validasi tidak boleh ada duplikat nama (pakai while) ===
+  let valid = false;
+  while (!valid) {
+    let adaDuplikat = new Set(namaArr).size !== namaArr.length; 
+    // new Set() membuat kumpulan data unik, kalau ukuran beda berarti ada duplikat
+    if (adaDuplikat || namaArr.length === 0) {
+      console.log("Data tidak valid! Ada duplikat atau kosong.");
+      return "Data tidak valid.";
+    } else {
+      valid = true; // kalau tidak ada duplikat, data valid
+    }
+  }
 
-// // //   // Array untuk simpan hasil salam
-// // //   let salamArr = [];
+  // Array untuk simpan hasil salam
+  let salamArr = [];
 
-// // //   // === Gunakan for untuk membuat salam tiap nama ===
-// // //   for (let i = 0; i < namaArr.length; i++) {
-// // //     let nama = namaArr[i]; // ambil nama santri ke-i
-// // //     let salam = "";
+  // === Gunakan for untuk membuat salam tiap nama ===
+  for (let i = 0; i < namaArr.length; i++) {
+    let nama = namaArr[i]; // ambil nama santri ke-i
+    let salam = "";
 
-// // //     // === if: deteksi nama pendek (< 4 huruf) beri salam unik ===
-// // //     if (nama.length < 4) {
-// // //       salam = "Halo " + nama; // salam khusus untuk nama pendek
-// // //     } else {
-// // //       // === switch: variasi salam jika nama mulai huruf 'A' ===
-// // //       switch (nama[0]) {
-// // //         case "A":
-// // //           salam = "Ahlan wa sahlan " + nama; // salam khusus untuk nama A
-// // //           break;
-// // //         default:
-// // //           salam = "Assalamualaikum " + nama; // salam umum
-// // //       }
-// // //     }
+    // === if: deteksi nama pendek (< 4 huruf) beri salam unik ===
+    if (nama.length < 4) {
+      salam = "Halo " + nama; // salam khusus untuk nama pendek
+    } else {
+      // === switch: variasi salam jika nama mulai huruf 'A' ===
+      switch (nama[0]) {
+        case "A":
+          salam = "Ahlan wa sahlan " + nama; // salam khusus untuk nama A
+          break;
+        default:
+          salam = "Assalamualaikum " + nama; // salam umum
+      }
+    }
 
-// // //     // Masukkan salam ke array hasil
-// // //     salamArr.push(salam);
-// // //   }
+    // Masukkan salam ke array hasil
+    salamArr.push(salam);
+  }
 
-// // //   // === Print hasil salam dengan forEach ===
-// // //   let output = [];
-// // //   salamArr.forEach((s) => {
-// // //     output.push(s); // kumpulkan semua salam jadi array teks
-// // //   });
+  // === Print hasil salam dengan forEach ===
+  let output = [];
+  salamArr.forEach((s) => {
+    output.push(s); // kumpulkan semua salam jadi array teks
+  });
 
-// // //   // Gabungkan semua salam jadi string baris-baris
-// // //   return output.join("\n");
-// // // }
+  // Gabungkan semua salam jadi string baris-baris
+  return output.join("\n");
+}
 
-// // // // Contoh penggunaan
-// // // let data = ["Imam", "Maya", "Rafi"];
-// // // console.log(daftarSalam(data));
+// Contoh penggunaan
+let data = ["Imam", "Maya", "Rafi"];
+console.log(daftarSalam(data));
 
-// // // //======================
+//======================
 
 
-// // // // 6. filter nilai santri digital class
-// // // // =====================
+// 6. filter nilai santri digital class
+// =====================
 
-// // // function filterNilai(santriArr, nilaiSantriArr, batas) {
-// // //   // --- 1. Validasi data ---
-// // //   let i = 0;
-// // //   while (i < santriArr.length) {
-// // //     if (santriArr.length !== nilaiSantriArr.length) {
-// // //       return "Data tidak valid (jumlah santri dan nilai tidak sama)!";
-// // //     }
-// // //     if (nilaiSantriArr.some(n => n < 0)) {
-// // //       return "Data nilai tidak boleh negatif!";
-// // //     }
-// // //     i++;
-// // //   }
+function filterNilai(santriArr, nilaiSantriArr, batas) {
+  // --- 1. Validasi data ---
+  let i = 0;
+  while (i < santriArr.length) {
+    if (santriArr.length !== nilaiSantriArr.length) {
+      return "Data tidak valid (jumlah santri dan nilai tidak sama)!";
+    }
+    if (nilaiSantriArr.some(n => n < 0)) {
+      return "Data nilai tidak boleh negatif!";
+    }
+    i++;
+  }
 
-// // //   // --- 2. Cari santri yang nilainya >= batas ---
-// // //   let lolos = [];
-// // //   for (let j = 0; j < santriArr.length; j++) {
-// // //     if (nilaiSantriArr[j] >= batas) {
-// // //       lolos.push(santriArr[j]);
-// // //     }
-// // //   }
+  // --- 2. Cari santri yang nilainya >= batas ---
+  let lolos = [];
+  for (let j = 0; j < santriArr.length; j++) {
+    if (nilaiSantriArr[j] >= batas) {
+      lolos.push(santriArr[j]);
+    }
+  }
 
-// // //   // --- 3. Return hasil akhir ---
-// // //   if (lolos.length === 0) {
-// // //     return `Tidak ada santri yang nilainya di atas ${batas}.`;
-// // //   } else {
-// // //     return `${lolos.join(" & ")} mendapatkan nilai di atas ${batas}.`;
-// // //   }
-// // // }
+  // --- 3. Return hasil akhir ---
+  if (lolos.length === 0) {
+    return `Tidak ada santri yang nilainya di atas ${batas}.`;
+  } else {
+    return `${lolos.join(" & ")} mendapatkan nilai di atas ${batas}.`;
+  }
+}
 
-// // // // --- 4. Contoh penggunaan ---
-// // // let santriArr = ["Wahyu","Dina","Umar"];
-// // // let nilaiSantriArr = [92,65,88];
-// // // console.log(filterNilai(santriArr, nilaiSantriArr, 80));
+// --- 4. Contoh penggunaan ---
+let santriArr = ["Wahyu","Dina","Umar"];
+let nilaiSantriArr = [92,65,88];
+console.log(filterNilai(santriArr, nilaiSantriArr, 80));
 
 // // // // ======================================
 
