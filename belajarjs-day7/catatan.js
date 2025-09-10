@@ -108,3 +108,9 @@ const fib = [0,1];
 for(i=0;i<38;i++){
     fib.push(fib[i]+fib[i+1])
 };
+
+let skor = ['88','90','78'];
+skor.forEach(function(a,b,c){ 
+    console.log(`skor ke ${b+1} adalah ${a}`);
+    
+})
