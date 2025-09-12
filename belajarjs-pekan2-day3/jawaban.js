@@ -79,7 +79,7 @@ cabangPerpustakaan.nama = 'Digital Cabang Selatan';
 // 18.
 let sistemPerpustakaan = {
     tambahBuku: function(judul,pengarang) {
-        return`buku ${judul} dari ${pengarang}`;   
+        return`- buku ${judul} dari ${pengarang}`;   
     },
     cariBuku: function(judul) {
         return`mencari buku berdasarkan ${judul} ditemukan`;
@@ -90,15 +90,16 @@ let sistemPerpustakaan = {
     tampilkanInfo: function() {
         console.log('=== INFORMASI PERPUSTAKAAN DIGITAL===\n');
         console.log(`Nama: ${perpustakaan.nama}`);
-        console.log(`Alamat: ${perpustakaan.alamat}\n`);
+        console.log(`Alamat: ${perpustakaan.alamat}`);
+        console.log(`Total Koleksi Buku: ${perpustakaan.jumlahbuku}\n`);
         console.log(`=== FASILITAS TERSEDIA ===\n`);
-        console.log(`Ruang baca ${perpustakaan.fasilitasPerpustakaan.ruangBaca.kapasitas} orang di lantai ${perpustakaan.fasilitasPerpustakaan.ruangBaca.lantai}`);
-        console.log(`Ruang komputer ${perpustakaan.fasilitasPerpustakaan.ruangKomputer.kapasitas} komputer di lantai ${perpustakaan.fasilitasPerpustakaan.ruangKomputer.lantai}\n`);
+        console.log(`Ruang baca:\nKapasitas: ${perpustakaan.fasilitasPerpustakaan.ruangBaca.kapasitas} orang \nlokasi: lantai ${perpustakaan.fasilitasPerpustakaan.ruangBaca.lantai}\n`);
+        console.log(`Ruang komputer:\nKapasitas: ${perpustakaan.fasilitasPerpustakaan.ruangKomputer.kapasitas} orang \nlokasi: lantai ${perpustakaan.fasilitasPerpustakaan.ruangKomputer.lantai}\n`);
         console.log(`=== KOLEKSI BUKU TERBARU ===\n`);
-        console.log(`${sistemPerpustakaan.tambahBuku("1. Laskar Pelangi", "Andrea Hirata")}`);
+        console.log(`${sistemPerpustakaan.tambahBuku("1. Laskar Pelangi", "Andrea Hirata")}\n`);
         console.log(`${sistemPerpustakaan.tambahBuku("2. Bumi Manusia", "Pramoedya Ananta Toer")}\n`);
         console.log(`=== PENGUNJUNG HARI INI ===\n`);
-        console.log(`${daftarPengunjung[0]}, ${daftarPengunjung[1]}, ${daftarPengunjung[2]}\n`);
+        console.log(`- ${daftarPengunjung[0]}\n- ${daftarPengunjung[1]}\n- ${daftarPengunjung[2]}`);
         console.log(`====================================`);
         console.log(`Status sistem: online\n`);
         console.log(`Terakhir diupdate: 11 september 2025`);
