@@ -99,7 +99,7 @@ let sistemPerpustakaan = {
         console.log(`${sistemPerpustakaan.tambahBuku("1. Laskar Pelangi", "Andrea Hirata")}\n`);
         console.log(`${sistemPerpustakaan.tambahBuku("2. Bumi Manusia", "Pramoedya Ananta Toer")}\n`);
         console.log(`=== PENGUNJUNG HARI INI ===\n`);
-        console.log(`- ${daftarPengunjung[0]}\n- ${daftarPengunjung[1]}\n- ${daftarPengunjung[2]}`);
+        console.log(`- ${daftarPengunjung[0]}\n- ${daftarPengunjung[1]}\n - ${daftarPengunjung[2]}`);
         console.log(`====================================`);
         console.log(`Status sistem: online\n`);
         console.log(`Terakhir diupdate: 11 september 2025`);
@@ -113,7 +113,6 @@ let sistemPerpustakaan = {
         
         
     }
-
 };
 // console.log(sistemPerpustakaan.tambahBuku("Laskar Pelangi", "Andrea Hirata"));
 // console.log(sistemPerpustakaan.cariBuku("Laskar Pelangi"));
