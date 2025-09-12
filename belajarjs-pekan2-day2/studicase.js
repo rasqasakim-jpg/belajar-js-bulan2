@@ -1,3 +1,5 @@
+// kasus belanja budget apa adanya
+
 let belanja = [];
 
 belanja.push('kaos');
