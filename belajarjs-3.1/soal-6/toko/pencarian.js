@@ -1,0 +1,1 @@
+export const cariProduk = (daftarProduk, keyword) => daftarProduk.find(p => p.keyword === keyword);

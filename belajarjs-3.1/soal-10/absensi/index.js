@@ -1,0 +1,1 @@
+export { tambahkan } from './catat.js'
