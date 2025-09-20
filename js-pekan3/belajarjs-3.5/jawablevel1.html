@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--tugas 1-->
+    <p id="p1"></p>
+    <!--tugas 2-->
+    <p class="paragraf"></p>
+    <p class="paragraf"></p>
+    <p class="paragraf"></p>
+    <!--tugas 3-->
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <!--tugas 4-->
+    <img id="foto" width="200px" alt="">
+    <!--tugas 5-->
+    <p class="teks"></p>
+    <p class="teks"></p>
+    <p class="teks"></p>
+    <p class="teks"></p>
+    <!--tugas 6-->
+    <p id="paragraf1">awal</p>
+    <!--tugas 7-->
+    <p id="paragraf2">Belajar DOM</p>
+    <!--tugas 8-->
+      <div id="kotak"></div>
+    <!-- tugas 9 -->
+    <p id="hide">sembunyikan saya</p>
+    <!-- tugas 10 -->
+    <p id="show">tampilkan saya</p>
+    <script>
+        // tugas 1
+        document.getElementById("p1").innerText = "Halo Dom!";
+        // tugas 2
+        const soal2 = document.getElementsByClassName("paragraf");
+        for (let i = 0; i < soal2.length; i++) {
+            soal2[i].innerHTML = `Paragraf ke-${i + 1}`;
+            soal2[i].style.color = "blue";
+        }
+        // tugas 3
+        const li = document.getElementsByTagName("li");
+        for (let i = 0; i < li.length; i++) {
+            li[i].innerText += " - item"
+        }
+        // tugas 4
+        document.querySelector("#foto").src = "aifaceswap-ba7a493db25a0a84de3caaa32581ac33.jpg"
+        // tugas 5
+        const paragraf = document.querySelectorAll(".teks");
+        paragraf.forEach((p, i) => {
+            p.innerText = `Paragraf ke-${i + 1}`;
+        })
+        // tugas 6
+        const p = document.getElementById("paragraf1");
+        p.innerText = "akhir";
+        // tugas 7
+        const p1 = document.getElementById("paragraf2");
+        p1.innerHTML = "<stong>Belajar DOM</strong>";
+        // tugas 8
+         const div = document.getElementById("kotak");
+        div.innerText = "Isi baru dari JS";
+        // tugas 9
+        const hide = document.getElementById("hide");
+        hide.style.display = "none";
+        // tugas 10
+        const show = document.getElementById("show");
+        show.style.display = "block";
+    </script>
+</body>
+</html>
+

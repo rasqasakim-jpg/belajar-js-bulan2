@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- tugas 11 -->
+ <p class="warna">merah</p>
+ <p class="warna">hijau</p>
+ <p class="warna">biru</p>
+    <!-- tugas 12 -->
+<div id="box"></div>
+    <!-- tugas 13 -->
+<a id="link">klik aku</a>
+    <!-- tugas 14 -->
+ <p class="teks">Paragraf A</p>
+ <p class="teks">Paragraf B</p>
+ <p class="teks">Paragraf C</p>
+    <!-- tugas 15 -->
+<p>Judul lama</p>
+
+ <script>
+    // tugas 11
+    const paragraf = document.querySelectorAll(".warna");
+    const colors = ["red", "green", "blue"];
+    paragraf.forEach((p, i) => {
+        p.style.color = colors[i];
+    })
+    // tugas 12
+    const div = document.getElementById("box");
+    div.style.width = "200px";
+    div.style.height = "200px";
+    div.style.backgroundColor = "yellow";
+    // tugas 13
+    const a = document.getElementById("link");
+    a.setAttribute("href", "https://www.google.com");
+    a.setAttribute("target", "_blank");
+    // tugas 14
+    const paragraf1 = document.querySelectorAll(".teks");
+    paragraf1.forEach((p) => {
+      p.innerText = p.innerText.toUpperCase();
+    });
+    // tugas 15
+    const p = document.querySelector("p");
+    p.classList.add("highlight")
+    
+ </script>
+</body>
+</html>

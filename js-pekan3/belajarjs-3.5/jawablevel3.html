@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- tugas 16 -->
+    <ul>
+    <li class="item">1</li>
+    <li class="item">2</li>
+    <li class="item">3</li>
+    <li class="item">4</li>
+    <li class="item">5</li>
+</ul>
+    <!-- tugas 17 -->
+    <img class="img" src="WhatsApp Image 2025-09-15 at 20.42.33_066eb78c.jpg" width="100px" alt="">
+    <img class="img" src="WhatsApp Image 2025-09-16 at 13.25.31_543b6022.jpg" width="100px" alt="">
+    <img class="img" src="WhatsApp Image 2025-09-16 at 20.40.38_b5bbc2f6.jpg" width="100px" alt="">
+    <!-- tugas 18 -->
+    <p id="teks">Hello</p>
+
+<script>
+    // tugas 16
+    const items = document.querySelectorAll(".item");
+    items.forEach((li, i) => {
+        if (i % 2 === 0) {
+            li.style.color = "red"
+        } else {
+            li.style.color = "blue"
+        }
+    })
+    // tugas 17
+    const imgs = document.querySelectorAll(".img");
+     imgs.forEach((img) => {
+         img.src = "placeholder.jpg"
+     })
+    // tugas 18
+      const p = document.getElementById("teks");
+    p.style.color = "white";        
+    p.style.background = "black";   
+    p.style.fontSize = "30px";      
+</script>
+</body>
+</html>

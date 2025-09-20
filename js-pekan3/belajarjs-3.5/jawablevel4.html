@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>document</title>
+</head>
+<body>
+    <!-- tugas 19 -->
+  <p id="namaSurat">Loading</p>
+    <!-- tugas 20 -->
+   <ul id="daftarSurat"></ul>
+
+  <script>
+    // tugas 19
+    const p = document.getElementById("namaSurat");
+
+    fetch("https://equran.id/api/v2/surat/1")
+      .then(response => response.json())
+      .then(data => {
+        p.innerText = data.data.namaLatin;
+      })
+      .catch(error => {
+        p.innerText = "Gagal mengambil data: " + error;
+      });
+      // tugas 20
+        const ul = document.getElementById("daftarSurat");
+
+    fetch("https://equran.id/api/v2/surat")
+      .then(response => response.json())
+      .then(data => {
+        data.data.slice(0, 5).forEach(surat => {
+          const li = document.createElement("li");
+          li.innerText = surat.namaLatin;
+          ul.appendChild(li);
+        });
+      })
+      .catch(error => {
+        ul.innerHTML = "<li>Gagal mengambil data: " + error + "</li>";
+      });
+
+  </script>
+</body>
+</html>
