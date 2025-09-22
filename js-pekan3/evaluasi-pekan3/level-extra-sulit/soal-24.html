@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daftar Surat</title>
+</head>
+<body>
+  <h1>Daftar Surat Al-Quran</h1>
+  <ul id="daftar-surat"></ul>
+
+  <script>
+    async function ambilSurat() {
+      try {
+        const res = await fetch("https://equran.id/api/v2/surat");
+        const data = await res.json();
+
+        const daftar = document.getElementById("daftar-surat");
+
+        data.data.forEach(surat => {
+          daftar.innerHTML += `<li>${surat.namaLatin}</li>`;
+        });
+      } catch (error) {
+        console.error("Terjadi error:", error);
+      }
+    }
+
+    ambilSurat();
+  </script>
+</body>
+</html>

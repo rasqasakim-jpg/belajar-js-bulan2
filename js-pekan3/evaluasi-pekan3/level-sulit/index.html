@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- no 23. -->
+    <div class="card">border 1</div>
+    <div class="card">border 1</div>
+    <div class="card">border 1</div>
+
+    <script>
+        // no.23
+        const cards = document.querySelectorAll(".card");
+        const color = ["red", "green", "blue"];
+        cards.forEach((card, i) => {
+            card.style.border = `${i + 1}px solid black`;
+            card.style.background = color[i];
+            card.innerHTML = `Card ${i + 1}`;
+        })
+    </script>
+</body>
+</html>

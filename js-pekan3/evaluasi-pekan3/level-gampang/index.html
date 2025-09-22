@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- no.6 -->
+     <h1 id="judul"></h1>
+     <!-- no.9 -->
+      <p class="warna">ini biru</p>
+      <p class="warna">biru ni</p>
+      <p class="warna">biru</p>
+     <script>
+        // no.6
+        const judulnya = document.getElementById("judul")
+        judulnya.innerText = "Belajar DOM Selection";
+        // no.9
+        const paragraf = document.querySelectorAll(".warna");
+        paragraf.forEach(p => {
+            p.style.color = "blue"
+        })
+
+     </script>
+</body>
+</html>
