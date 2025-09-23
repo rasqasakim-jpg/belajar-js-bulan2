@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- A atribut HTML -->
+    <!-- no.1 -->
+    <button onclick="alert('hello!')">klik aja</button>
+    <!-- no.2 -->
+     <img src="foto-2.png" onclick="this.src='foto-1.jpg' "style="width: 100px;" alt="gambar awal">
+    <!-- no.3 -->
+    <p ondblclick="this.innerText = 'double clicked!'">
+        selamat datang
+    </p>
+    <!-- no.4 -->
+    <input type="text" onfocus="this.placeholder = 'Tulis di sini...'">
+    <!-- no.5 -->
+    <button 
+    onmousedown="alert('Mouse Down')" 
+    onmouseup="alert('Mouse Up')">
+    Tekan Saya
+    </button>
+
+    <!-- B menggunakan javascript -->
+    <!-- no.6 -->
+    <button id="btn">klik ini</button>
+    <p id="msg">belum di klik</p>
+    <!-- no.7 -->
+    <div id="area" style="width: 200px; height: 100px;">warnain dong</div>
+    <!-- no.8 -->
+     <input type="text" id="input" placeholder="ketik apasaja...">
+    <p>ketikan: <span id="show"></span></p>
+    <!-- no.9 -->
+    <button id="btn1">tekan ini</button>
+    <!-- no.10 -->
+     <button id="btn2">klik saja</button>
+     <p id="msg1">sebelumnya</p>
+
+     <!-- C menggunakan addeventlistener -->
+      <!-- no.11 -->
+       <button id="btn3">pencet ini"</button>
+      <!-- no.12 -->
+      <button id="btn4">tekan saja</button> 
+      <button id="remove">remove</button>
+      <!-- no.13 -->
+    <form id="formku">
+        <input type="text" id="nama" placeholder="masukkan nama">
+        <button type="submit">kirim</button>
+    </form>
+    <!-- no.14 -->
+    <ul id="list">
+        <li>satu</li>
+        <li>dua</li>
+        <li>tiga</li>
+    </ul>
+    <!-- no.15 -->
+     <button id="klik">klik aja</button>
+
+
+    <script>
+        // B menggunakan javascript
+        // 6.
+        const btn = document.getElementById('btn');
+        btn.onclick = function() {
+            document.getElementById('msg').innerText = 'sudah di klik';
+        }
+        // 7.
+        const area = document.getElementById('area');
+        area.onmouseover = function() {
+            area.style.backgroundColor = 'grey';
+        }
+        area.onmouseout = function() {
+            area.style.backgroundColor = 'white';
+        }
+        // 8.
+        const input = document.getElementById('input');
+        const show = document.getElementById('show');
+        input.oninput = function() {
+            show.innerText = input.value;
+        }
+        // 9.
+        const btn1 = document.getElementById('btn1');
+        btn1.onclick = function() {
+            this.disabled = true;
+            this.innerText = 'sudah ditekan';
+        }
+        // 10.
+        const btn2 = document.getElementById('btn2');
+        const msg1 = document.getElementById('msg1');
+        btn2.onclick = function() {
+            msg1.innerText = 'pertama sudah ditekan';
+        }
+        btn2.onclick = function() {
+            msg1.innerText = 'kedua sesudah';
+        }
+        // saat taombol di klik yang muncul hanya handler kedua, handler pertama hilang karena element.onclick hanya bisa menyimpan satu handler, jadi kalau di assign ulang, handler sebelumnya kehapus 
+
+        // C menggunakan addventlistener
+        // 11.
+        const btn3 = document.getElementById('btn3');
+        function handlerA() {
+            btn3.style.backgroundColor = "grey" 
+        }
+        function handlerB() {
+            console.log("jebreeeeeeeeeeeettttttt");
+        }
+        btn3.addEventListener('click', handlerA);
+        btn3.addEventListener('click', handlerB);
+        // 12.
+        const button = document.getElementById('btn4');
+        const removeBtn = document.getElementById('remove')
+        function handlerC() {
+            button.style.backgroundColor = "red" 
+        }
+        function handlerD() {
+            console.log("munculkan");
+        }
+        button.addEventListener('click',handlerC);
+        button.addEventListener('click',handlerD);
+
+        removeBtn.addEventListener('click',function() {
+            button.removeEventListener('click',handlerD);
+            alert("dihapus")
+        });
+        // 13.
+        const form = document.getElementById('formku');
+        const nameInput = document.getElementById('nama');
+
+        form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        console.log("nama yang dimasukkan:", nameInput.value);
+        });
+        // 14.
+        const list = document.getElementById('list');
+        list.addEventListener('click', function(e) {
+            if(e.target.tagName === "LI"); {
+                e.target.innerText = "sudah di klik";
+            }
+        });
+        // 15.
+         const klik = document.getElementById('klik');
+         klik.addEventListener('click', function() {
+            console.log("muncul");
+            
+         }, {once: true});
+
+        
+
+
+
+
+        
+
+
+        
+
+    </script>
+</body>
+</html>
