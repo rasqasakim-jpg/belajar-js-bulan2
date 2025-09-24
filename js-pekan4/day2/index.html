@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+    <!-- no. 6 -->
+     <input type="text" name="nama" required>
+    <!-- no. 7 -->
+     <input type="number" name="usia" min="18" max="60" required>
+    <!-- no. 8 -->
+    <input type="password" name="password" minlength="8" required>
+    <!-- no. 9 -->
+    <input type="email" name="email" required>
+    <!-- no. 10 -->
+    <input type="text" name="telepon" required pattern="[0-9]{10,12}">
+    <!-- no. 11 -->
+    <input type="text" name="username" required pattern="[a-z]+">
+    <!-- no. 12 -->
+    <input type="text" name="kodepos" required pattern="[0-9]{5}">
+    <!-- no. 13 -->
+    <input type="date" name="tgl_lahir" required max="2019-12-31">
+    <!-- no. 14 -->
+    <input type="url" name="website" required>
+    <!-- no. 15 -->
+    <input type="text" name="angka" required pattern="[0-9]*(0|2|4|6|8)$">
+    <button type="submit">kirim</button>
+    </form>
+</body>
+</html>

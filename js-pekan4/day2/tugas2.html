@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- no. 16 -->
+     <form id="form1">
+        <input type="text" id="nama" placeholder="no.16">
+        <button type="submit">kirim</button>
+     </form>
+     <!-- no. 17 -->
+    <form id="formUsia">
+    <input type="number" id="usia" placeholder="no.17">
+    <button type="submit">Kirim</button>
+    </form>
+    <!-- no. 18 -->
+    <input type="password" id="password" placeholder="no.18">
+    <button type="submit">Kirim</button>
+    <!-- no. 19 -->
+    <input type="text" id="email" placeholder="no.19">
+    <button onclick="cekEmail()">cek</button>
+    <!-- no. 20 -->
+    <input type="text" id="hp" placeholder="no.20">
+    <button onclick="cekHp()">cek</button>
+    <!-- no. 21 -->
+    <label>password</label>
+    <input type="password" id="pw1" placeholder="no.21">
+    <label>confirm password</label>
+    <input type="text" id="pw2" placeholder="tulis ulang pw">
+    <button onclick="cekPassword()">cek</button>
+        <br>
+    <!-- no. 22 -->
+     <input type="date" id="tgl">
+     <button onclick="cekTgl()">cek</button>
+    <!-- no. 23 -->
+     <input type="text" id="username" placeholder="no.23">
+    <button onclick="cekUsername()">cek</button>
+    <!-- no. 24 -->
+    <label>Username:</label>
+    <input type="text" id="username" placeholder="no.24"><br><br>
+    <label>Password:</label>
+    <input type="password" id="password" placeholder="no.24"><br><br>
+    <button type="button" onclick="login()">Login</button>
+    <!-- no. 25 -->
+    <label>
+        <input type="checkbox" id="setuju" placeholder="no.25">
+        saya setuju
+    </label>
+    <button onclick="cekSetuju()">submit</button>
+    <!-- no. 26 -->
+    <input type="number" id="angka" placeholder="no.26">
+    <br>
+    <button type="button" onclick="cekAngka()">Cek</button>
+    <!-- no. 27 -->
+    <textarea id="komentar"></textarea placeholder="no.27">
+    <br>
+    <button onclick="cekKomentar()">Kirim</button>
+    <!-- no. 28 -->
+    <select id="kota">
+    <option value="">-- Pilih Kota --</option>
+    <option value="jakarta">Jakarta</option>
+    <option value="bandung">Bandung</option>
+    <option value="surabaya">Surabaya</option>
+    </select>
+    <button onclick="cekKota()">Kirim</button>
+    <!-- no. 29 -->
+    <input type="file" id="fileInput" placeholder="no.29">
+    <br>
+    <button onclick="cekFile()">Upload</button>
+    <!-- no. 30 -->
+    <label>Nama:</label>
+    <input type="text" id="nama" placeholder="no.30"><br><br>
+
+    <label>Email:</label>
+    <input type="email" id="email"><br><br>
+
+    <label>Password:</label>
+    <input type="password" id="password"><br><br>
+
+    <button onclick="daftar()">Daftar</button>
+
+     <script>
+        // no. 16
+        const form = document.getElementById("form1");
+        const nama = document.getElementById("nama");
+        form.addEventListener("submit", (e)=>{
+            e.preventDefault();
+            if(nama.value === "") {
+                alert("wajib diisi");
+            }else {
+                alert("berhasil " + nama.value);
+            }
+        });
+        // no. 17
+        const formUsia = document.getElementById("formUsia");
+        const usia = document.getElementById("usia");
+        formUsia.addEventListener("submit", (e)=>{
+            e.preventDefault();
+            if(usia.value < 18) {
+                alert("minimal 18 tahun");
+            }else{
+                alert("berhasil" + usia.value );
+            }
+        });
+        // no. 18
+         function cekPassword() {
+         const pw = document.getElementById("password").value;
+         if (pw.length < 8) {
+            alert("Password minimal 8 karakter");
+         } else {
+            alert("Password valid!");
+       }
+  };
+        // no. 19
+        function cekEmail() {
+            const email = document.getElementById("email").value;
+            const regex = /^[\w.-]+@[\w.-]+\.\w{2,}$/;
+            if(regex.test(email)) {
+                alert("email valid");
+            }else {
+                alert("email tidak valid");
+            }
+        };
+        // no. 20
+        function cekHp() {
+            const hp = document.getElementById("hp").value;
+            if(hp === "" || isNaN(hp)) {
+                alert("isi: wajib angka");
+            }else {
+                alert("berhasil: " + hp );
+            }
+        };
+        // no. 21
+        function cekPassword() {
+            const p1 = document.getElementById("pw1").value;
+            const p2 = document.getElementById("pw2").value;
+            if(p1 === "" || p2 === "") {
+                alert("Kedua password wajib diisi")
+            }else if(p1 !== p2) {
+                alert("Password tidak sama")
+            }else {
+                alert("Password sama")
+            }
+        };
+        // no. 22
+        function cekTgl() {
+            const date = document.getElementById("tgl").value;
+            if(date === "") {
+                alert("wajib diisi");
+                return;
+            }
+
+            const theDate = new Date(date);
+            const today = new Date();
+
+            if(theDate > today) {
+                alert("tanggal tidak boleh lewat dari hari ini");
+            }else {
+                alert("tanggal valid " + date);
+            }
+        };
+        // no. 23
+        function cekUsername() {
+            const name = document.getElementById("username").value;
+            const regex = /^[a-zA-Z0-9]{5,}$/;
+            if(regex.test(name)) {
+                alert("username minim 5 karakter, hanya huruf/angka");
+            }else {
+                alert("username valid: " + name);
+            }
+        };
+        // no. 24
+        function login() {
+            const u = document.getElementById("username").value;
+            const p = document.getElementById("password").value;
+            if(!u || !p) {
+                alert("isi semua field");
+            }else{
+                alert("login berhasil");
+            }
+        };
+        // no. 25
+        function cekSetuju() {
+            const checkbox = document.getElementById("setuju");
+            if(!checkbox.checked) {
+                alert("wajib setuju");
+            }else {
+                alert("berhasil");
+            }
+        };
+        // no. 26
+       function cekAngka() {
+        const angka = document.getElementById("angka").value;
+        if(angka === "") {
+            alert("wajib diisi");
+            return;
+        }
+        if(angka % 2 !== 0) {
+            alert("angka harus genap");
+        }else {
+            alert("angka genap: " + angka);
+        }
+       };
+       // no. 27
+       function cekKomentar() {
+        const koment = document.getElementById("komentar").value;
+        if(koment.length > 200) {
+            alert("komentar tidak boleh lebih 200 karakter");
+        }else {
+            alert("berhasil: " + koment.length + " karakter");
+        }
+     };
+     // no. 28
+     function cekKota() {
+     const select = document.getElementById("kota");
+        if (select.value === "") {
+        alert("Silakan pilih kota terlebih dahulu");
+        } else {
+        alert("Kota dipilih: " + select.value);
+    }
+  };
+    // no. 29
+     function cekFile() {
+    const file = document.getElementById("fileInput").value;
+
+    if (!file.endsWith(".jpg") && !file.endsWith(".png")) {
+      alert("File harus .jpg atau .png");
+    } else {
+      alert("File valid: " + file);
+    }
+  };
+    // no. 30
+     function daftar() {
+    const nama = document.getElementById("nama").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    if (!nama || !email || password.length < 8) {
+      alert("Semua field harus valid (nama terisi, email ada @, password minimal 8)");
+    } else {
+      alert("Sukses");
+    }
+  }
+       
+        
+             
+
+     </script>
+</body>
+</html>
