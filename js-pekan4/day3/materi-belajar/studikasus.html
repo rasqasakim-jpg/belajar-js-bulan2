@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s;
+    }
+    .proyek {
+      margin: 50px;
+    }
+    </style>
+</head>
+<body>
+    <div class="proyek">
+        <h1>PILIH WARNA</h1>
+        <input type="text" id="color picker" placeholder="pilihWarna" list="daftarWarna">
+        <datalist id="daftarWarna">
+            <option value="red"></option>
+            <option value="blue"></option>
+            <option value="green"></option>
+            <option value="yellow"></option>
+            <option value="orange"></option>
+            <option value="purple"></option>
+            <option value="pink"></option>
+            <option value="brown"></option>
+            <option value="grey"></option>
+            <option value="black"></option>
+        </datalist>
+        <button id="savebtn">Simpan Warna</button>
+        <button id="reset" onclick="reset()">Reset</button>
+    </div>
+ 
+    <script>
+        const pilihWarna = document.getElementById('color picker');
+        const savebtn = document.getElementById('savebtn');
+
+        const simpanWarna = localStorage.getItem("tema")
+        if(simpanWarna){
+            document.body.style.backgroundColor = simpanWarna;
+            pilihWarna.value = simpanWarna;
+        };;
+
+        savebtn.addEventListener("click", () => {
+            const warnaDipiih = pilihWarna.value;
+            document.body.style.backgroundColor = warnaDipiih;
+            localStorage.setItem("tema", warnaDipiih);
+        });
+        function reset() {
+            document.body.style.backgroundColor = "white";
+            localStorage.removeItem("tema");
+        }
+    </script>
+
+</body>
+</html>
